@@ -4,6 +4,8 @@
 
 create shake gif from png file
 
+![sample.png.gif](https://raw.githubusercontent.com/takkanm/furueru/master/sample.png.gif)
+
 ## build
 
 ```
