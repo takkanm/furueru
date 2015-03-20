@@ -9,8 +9,8 @@ import (
 	"os"
 )
 
-func writeGifFile(outFileNmae string, g gif.GIF) {
-	outFile, _ := os.Create(outFileNmae)
+func writeGifFile(outFileName string, g gif.GIF) {
+	outFile, _ := os.Create(outFileName)
 	defer outFile.Close()
 
 	g.Delay = make([]int, len(g.Image))
@@ -39,8 +39,8 @@ func calsSlideVolume() (int, int) {
 	return x, y
 }
 
-func generateAnimeGif(inFileNmae string) {
-	inFile, _ := os.Open(inFileNmae)
+func generateAnimeGif(inFileName string) {
+	inFile, _ := os.Open(inFileName)
 	defer inFile.Close()
 
 	pngImage, _ := png.Decode(inFile)
@@ -59,7 +59,7 @@ func generateAnimeGif(inFileNmae string) {
 		outGif.Image = append(outGif.Image, palet)
 	}
 
-	writeGifFile(inFileNmae+".gif", outGif)
+	writeGifFile(inFileName+".gif", outGif)
 }
 
 func main() {
